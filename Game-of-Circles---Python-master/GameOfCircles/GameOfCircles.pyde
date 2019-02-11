@@ -2,13 +2,14 @@ import platform
 from Bullet import Bullet
 from Enemy import Enemy
 from Player import Player
+from Raindrop import Raindrop
 from SpriteManager import sprites
 
 def setup():
     print "Built with Processing Python version " + platform.python_version()
     
     global player, sprites
-    size(500, 500)
+    size(800, 800)
     playerTeam = 1
     enemyTeam = 2
     player = Player(width/2, height/2, playerTeam)
@@ -16,6 +17,17 @@ def setup():
     sprites.append(player)
     sprites.append(Enemy(50, 50, enemyTeam))
     sprites.append(Enemy(150, 150, enemyTeam))
+    
+    sprites.append(Raindrop(550, 100, enemyTeam))
+    sprites.append(Raindrop(500, 100, enemyTeam))
+    sprites.append(Raindrop(450, 100, enemyTeam))
+    sprites.append(Raindrop(400, 100, enemyTeam))
+    sprites.append(Raindrop(350, 100, enemyTeam))
+    sprites.append(Raindrop(300, 100, enemyTeam))
+    sprites.append(Raindrop(250, 100, enemyTeam))
+    sprites.append(Raindrop(200, 100, enemyTeam))
+    sprites.append(Raindrop(150, 100, enemyTeam))
+    sprites.append(Raindrop(100, 100, enemyTeam))
     
                            
 def draw():
