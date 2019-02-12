@@ -3,6 +3,8 @@ from Bullet import Bullet
 from Enemy import Enemy
 from Player import Player
 from Raindrop import Raindrop
+from Jiggle import Jiggle
+from ScreenSaver import ScreenSaver
 from SpriteManager import sprites
 
 def setup():
@@ -28,6 +30,10 @@ def setup():
     sprites.append(Raindrop(200, 100, enemyTeam))
     sprites.append(Raindrop(150, 100, enemyTeam))
     sprites.append(Raindrop(100, 100, enemyTeam))
+    
+    sprites.append(ScreenSaver(120, 100, enemyTeam))
+     
+    sprites.append(Jiggle(100, 100, enemyTeam))
     
                            
 def draw():
