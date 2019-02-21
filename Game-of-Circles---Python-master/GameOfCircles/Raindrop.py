@@ -5,8 +5,8 @@ class Raindrop:
     c = color(0,0,255)
     
     def __init__(self, x, y, team):
-        self.x = x
-        self.y = y
+        self.x = random(0, width)
+        self.y = random(0, height)
         self.team = team
         
     def move(self):

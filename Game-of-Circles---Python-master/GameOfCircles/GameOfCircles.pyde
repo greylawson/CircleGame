@@ -6,12 +6,13 @@ from Raindrop import Raindrop
 from Jiggle import Jiggle
 from ScreenSaver import ScreenSaver
 from SpriteManager import sprites
+from Sprite import Sprite
 
 def setup():
     print "Built with Processing Python version " + platform.python_version()
     
     global player, sprites
-    size(800, 800)
+    size(900, 900)
     playerTeam = 1
     enemyTeam = 2
     player = Player(width/2, height/2, playerTeam)
