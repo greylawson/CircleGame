@@ -1,6 +1,6 @@
 sprites = []
 destroyed = []
-    
+
 playerTeam = 1
 enemyTeam = 2
 
@@ -12,19 +12,19 @@ def setPlayer(playerInstance):
 def getPlayer():
     global player
     return player
-        
+
 def destroy(target):
     destroyed.append(target)
-        
+    
 def spawn(obj):
     sprites.append(obj)
-        
+    
 def animate():
     for sprite in sprites:
         sprite.animate()
     checkCollisions()
     bringOutTheDead()
-        
+    
 def checkCollisions():
     for i in range(0, len(sprites)):
         for j in range(i + 1, len(sprites)):
@@ -37,5 +37,5 @@ def checkCollisions():
 def bringOutTheDead():
     for sprite in destroyed:
         if sprite in sprites:
-            sprites.remove(sprite)
-            destroyed.remove(sprite)
+            sprites.remove(sprite)    
+        destroyed.remove(sprite)

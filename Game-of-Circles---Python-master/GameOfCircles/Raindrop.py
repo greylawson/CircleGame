@@ -1,15 +1,12 @@
-import SpriteManager
-from Sprite import Sprite
-
-class Raindrop(Sprite):
+class raindrop:
     
     speed = 8
-    diameter = 50
-    c = color(0,0,255)
+    diameter = 20
+    c = color(255,0,255)
     
     def __init__(self, x, y, team):
-        self.x = random(0, width)
-        self.y = random(0, height)
+        self.x = x
+        self.y = y
         self.team = team
         
     def move(self):
@@ -17,7 +14,7 @@ class Raindrop(Sprite):
         if self.y < 0:
             self.speed *= -1
         if self.y > width:
-            self.y = 0 
+            self.y = 0
         
     def display(self):
         fill(self.c)

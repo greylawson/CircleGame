@@ -1,6 +1,6 @@
 import SpriteManager
 
-class Sprite:
+class Sprite(object):
     team = 2
     diameter = 50
     c = color(255)
@@ -12,7 +12,7 @@ class Sprite:
         
     def move():
         pass
-        
+    
     def display(self):
         fill(self.c)
         ellipse(self.x, self.y, self.diameter, self.diameter)

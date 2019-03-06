@@ -1,51 +1,48 @@
 import platform
-from Bullet import Bullet
+from Bullet import Bullet 
 from Enemy import Enemy
 from Player import Player
-from Raindrop import Raindrop
-from Jiggle import Jiggle
-from Shooter import Shooter
-from ScreenSaver import ScreenSaver
 from SpriteManager import sprites
-from Sprite import Sprite
+from raindrop import raindrop
+from JiggleBot import JiggleBot
+from ScreenSaverBot import ScreenSaverBot
 import SpriteManager
 
 def setup():
     print "Built with Processing Python version " + platform.python_version()
-    size(900, 900)
-    player = Player(width/2, height/2, 1)
+    size(800, 800)
+    player = Player(width / 2, height - 100, 1);
     SpriteManager.setPlayer(player)
-    SpriteManager.spawn(Jiggle(200, 50, 2))
+    SpriteManager.spawn(JiggleBot (200, 50, 20))
     SpriteManager.spawn(Enemy(100, 100, 2))
     
-    SpriteManager.spawn(Raindrop(200, 200, 2))
-    SpriteManager.spawn(Raindrop(550, 100, 2))
-    SpriteManager.spawn(Raindrop(500, 100, 2))
-    SpriteManager.spawn(Raindrop(450, 100, 2))
-    SpriteManager.spawn(Raindrop(400, 100, 2))
-    SpriteManager.spawn(Raindrop(350, 100, 2))
-    SpriteManager.spawn(Raindrop(300, 100, 2))
-    SpriteManager.spawn(Raindrop(250, 100, 2))
-    SpriteManager.spawn(Raindrop(200, 100, 2))
-    SpriteManager.spawn(Raindrop(150, 100, 2))
-    SpriteManager.spawn(Raindrop(100, 100, 2))
+    enemyTeam = 2
     
-    SpriteManager.spawn(ScreenSaver(120, 100, 2))
-     
-    SpriteManager.spawn(Jiggle(100, 100, 2))
-    
-    SpriteManager.spawn(Shooter(100, 130, 2))
-    
+    sprites.append(player)
+    sprites.append(Enemy(50, 50, enemyTeam))
+    sprites.append(Enemy(150, 150, enemyTeam))
+    sprites.append(raindrop(50, 200, enemyTeam))
+    sprites.append(raindrop(100, 200, enemyTeam))
+    sprites.append(raindrop(150, 200, enemyTeam))
+    sprites.append(raindrop(200, 200, enemyTeam))
+    sprites.append(raindrop(250, 200, enemyTeam))
+    sprites.append(raindrop(300, 200, enemyTeam))
+    sprites.append(raindrop(350, 200, enemyTeam))
+    sprites.append(raindrop(400, 200, enemyTeam))
+    sprites.append(raindrop(450, 200, enemyTeam))
+    sprites.append(raindrop(500, 200, enemyTeam))
+    sprites.append(ScreenSaverBot(20, 150, enemyTeam))
+    sprites.append(JiggleBot(20, 100, enemyTeam))
                            
 def draw():
-   background(255)
-   SpriteManager.animate()
+    global player, sprites
+    background(255)    
+
+    for sprite in sprites:
+        sprite.animate()
     
 def keyPressed():
-    global player
-    SpriteManager.getPlayer().keyDown()
+    SpriteManager.player.keyDown()    
         
 def keyReleased():
-    global player
-    SpriteManager.getPlayer().keyUp()
-     
+    SpriteManager.player.keyUp()
