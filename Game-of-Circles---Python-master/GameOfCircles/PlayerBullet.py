@@ -2,10 +2,10 @@ from Sprite import Sprite
 
 import SpriteManager
 
-class Bullet(Sprite):
-    speed = 0.12
+class PlayerBullet(Sprite):
+    speed = 1.5
     diameter = 10
-    c = color(255,255,255)
+    c = color(255,225,0)
     
     def __init__(self, x, y, vector, team):
         Sprite.__init__(self, x, y, team)

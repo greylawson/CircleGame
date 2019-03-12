@@ -1,21 +1,18 @@
-class ScreenSaverBot:
+from Sprite import Sprite
+
+class ScreenSaverBot(Sprite):
     
     xspeed = 8
     yspeed = 4
     diameter = 50
-    c = color(0,250,0)
+    c = color(255,255,0)
     
-    def __init__(self, x, y, team):
-        self.x = x
-        self.y = y
-        self.team = team
-        
     def move(self):
         self.x += self.xspeed
         self.y += self.yspeed
-        if self.x < 0 or self.x > width:
+        if self.x < 25 or self.x > width-25:
             self.xspeed *= -1
-        if self.y < 0 or self.y > height:
+        if self.y < 25 or self.y > height-25:
             self.yspeed *= -1
         
     def display(self):
